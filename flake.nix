@@ -2,6 +2,7 @@
   inputs = {
     # Official NixOS package sources
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    home-manager.url = "github:nix-community/home-manager";
 
     # Disko - Declarative partitioning and formatting
     disko = {
@@ -31,10 +32,11 @@
     };
   };
 
-  outputs = inputs: {
+  outputs = { self, nixpkgs, flake-parts, home-manager, datacode, ... } @ inputs: {
     nixosConfigurations.bluebird = inputs.nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
+        inputs.home-manager.nixosModules.home-manager
         inputs.disko.nixosModules.disko
         inputs.preservation.nixosModules.default
 	      inputs.sops-nix.nixosModules.sops

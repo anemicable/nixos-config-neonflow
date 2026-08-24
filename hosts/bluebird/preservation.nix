@@ -5,7 +5,13 @@
     preserveAt."/persist" = {
       directories = [
         "/etc/nixos"
+        "/etc/ssh"
+        "/etc/NetworkManager/system-connections"
+        "/var/lib/systemd"
+        "/var/lib/sops-nix"
+        "/var/lib/AccountsService"
         "/var/lib/bluetooth"
+        "/var/lib/containers"
         {
           directory = "/var/lib/nixos";
           inInitrd = true;
@@ -22,9 +28,26 @@
       # Preserve user files
       users.mistflow = {
          directories = [
-           ".ssh"
-           ".mozilla"
-           "nixos-config"
+            "Documents"
+            "Downloads"
+            "Pictures"
+            "Videos"
+            "Music"
+            
+            ".config"
+            ".local/share"
+            ".local/share/icons"
+            ".local/share/DankMaterialShell"
+            ".java"
+            ".junie"
+            ".vscode"
+            ".vscode-shared"
+            ".vscode-oss"
+            ".vscode-oss-shared"
+            ".ssh"
+            ".mozilla"
+            
+            "nixos-config"
          ];
       
          files = [

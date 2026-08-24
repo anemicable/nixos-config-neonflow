@@ -7,5 +7,8 @@
      wget
      git
      vscode
+
+     sops 
+     age
    ];
 }

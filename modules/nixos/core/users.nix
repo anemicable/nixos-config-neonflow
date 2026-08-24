@@ -1,7 +1,8 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 {
     users.users.mistflow = {
-     initialPassword = "12345";
+     hashedPasswordFile = config.sops.secrets."mistflow-password".path;
+
      isNormalUser = true;
      extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
      packages = with pkgs; [

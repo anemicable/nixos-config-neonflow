@@ -3,7 +3,7 @@
 {
   sops = {
     defaultSopsFile = ../../../secrets/secrets.yaml;
-    defaultSopsFormat = "yaml"
+    defaultSopsFormat = "yaml";
 
     age = {
       keyFile = "/persist/home/mistflow/.config/sops/age/keys.txt";
@@ -12,7 +12,7 @@
     };
 
     secrets = {
-      "mistflow-password" = {
+      "mistflow_password" = {
         neededForUsers = true;
       };
     };

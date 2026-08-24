@@ -17,6 +17,18 @@
       url = "github:mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # Noctalia Shell
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    # Dank Material Shell 
+    dms = {
+      url = "github:AvengeMedia/DankMaterialShell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs: {
@@ -25,6 +37,7 @@
       modules = [
         inputs.disko.nixosModules.disko
         inputs.preservation.nixosModules.default
+	      inputs.sops-nix.nixosModules.sops
         ./hosts/bluebird/default.nix
       ];
     };

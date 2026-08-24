@@ -13,5 +13,6 @@
     ./locale.nix
     ./nix.nix
     ./users.nix
+    ./terminal.nix
   ];
 }

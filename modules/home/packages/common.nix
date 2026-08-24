@@ -10,8 +10,6 @@
     ruff
     uv
 
-    dbt
-
     dbeaver-bin
 
     # Containerization

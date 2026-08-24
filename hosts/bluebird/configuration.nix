@@ -7,7 +7,6 @@
       ./disk-partitioning.nix
       ./preservation.nix
       ./local-vars.nix
-      ./home.nix
 
       ../../modules/nixos/core/default.nix
     ];

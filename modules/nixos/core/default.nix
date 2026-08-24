@@ -6,6 +6,7 @@
     ../security/default.nix
     ../gui/default.nix
 
+    ./audio.nix
     ./boot.nix
     ./networking.nix
     ./system-vars.nix

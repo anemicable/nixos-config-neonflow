@@ -2,8 +2,7 @@
 
 {
   imports = [
-    ./home-packages.nix
-    ../../modules/home-manager/core/default.nix
+    ../../modules/home/core/default.nix
   ];
 
   # === Динамические переменные ===

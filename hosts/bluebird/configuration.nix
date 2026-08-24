@@ -11,7 +11,16 @@
 
       ../../modules/nixos/core/default.nix
     ];
+  
 
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    extraSpecialArgs = {
+      inherit inputs;
+    };
+    users.${config.systemVars.username} = import ./home.nix;
+  };
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;

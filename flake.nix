@@ -32,7 +32,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, flake-parts, home-manager, datacode, ... } @ inputs: {
+  outputs = { self, nixpkgs, home-manager, ... } @ inputs: {
     nixosConfigurations.bluebird = inputs.nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [

@@ -15,7 +15,8 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "bluebird"; # Define your hostname.
-
+  
+  nix.settings.experimental-features = [ "nix-command" "flakes"];
   # Configure network connections interactively with nmcli or nmtui.
   networking.networkmanager.enable = true;
 

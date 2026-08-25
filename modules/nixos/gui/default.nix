@@ -2,6 +2,7 @@
 {
   imports = [
     #./gnome/default.nix
+    ./niri.nix
   ];
 
   # Enable the X11 windowing system.

@@ -19,6 +19,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Niri
+    niri = {
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Noctalia Shell
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell";
@@ -32,9 +38,12 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... } @ inputs: {
+  outputs = { self, nixpkgs, home-manager, niri, ... } @ inputs: {
     nixosConfigurations.bluebird = inputs.nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
+      specialArgs = {
+        inherit inputs;
+      };
       modules = [
         inputs.home-manager.nixosModules.home-manager
         inputs.disko.nixosModules.disko

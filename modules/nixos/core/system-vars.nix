@@ -46,6 +46,7 @@
       type = lib.types.enum [
         "niri-noctalia"
         "niri-dms"
+        "gnome"
       ];
       default = "niri-noctalia";
       description = "Which GUI build variant to use";

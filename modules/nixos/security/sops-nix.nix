@@ -15,6 +15,11 @@
       "mistflow_password" = {
         neededForUsers = true;
       };
+      
+      "personal-email" = {};
+      "professional-email" = {};
+      "personal-github-name" = {};
+      "professional-github-name" = {};
     };
   };
 }

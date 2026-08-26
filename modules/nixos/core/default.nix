@@ -3,6 +3,7 @@
 {
   imports = [
     ../packages/default.nix
+    ../downloads/default.nix
     ../security/default.nix
     ../gui/default.nix
 

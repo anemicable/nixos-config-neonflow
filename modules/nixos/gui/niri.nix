@@ -3,7 +3,7 @@
   programs.niri.enable = true;
 
   # Используем свежую версию Niri только для DMS
-  programs.niri.package = lib.mkIf (config.systemVars.guiBuild == "niri-dms") pkgs.niri;
+  programs.niri.package = pkgs.niri;
 
   # Кэш niri
   nix.settings = {
@@ -11,8 +11,8 @@
     trusted-public-keys = [ "niri.cachix.org-1:Wv0OmO7PsuocRKzfDoJ3mulSl7Z6oezYhGhR+3W2964=" ];
   };
 
-  environment.systemPackages = with pkgs; [
-    xwayland-satellite
-    nautilus
-  ];
+  #environment.systemPackages = with pkgs; [
+  #  xwayland-satellite
+  #  nautilus
+  #];
 }

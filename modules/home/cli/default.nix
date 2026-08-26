@@ -5,7 +5,7 @@
 
   imports = [
     ./terminal.nix
-    #./git.nix
+    ./git.nix
     #./aliases.nix
     #./nvim/default.nix
     #./scripts.nix

@@ -2,6 +2,7 @@
 { config, ... }:
 let
   hostname = config.systemVars.hostname;
+  username = config.systemVars.username;
   secret = name: config.sops.secrets.${name}.path;
 in
 {
@@ -42,12 +43,15 @@ in
 
 
   # Job
-  services.borgbackup.jobs.${hostname} = {
+  services.borgbackup.jobs."${hostname}-system" = {
     paths = [ "/persist" ];
     exclude = [
       "**/.cache"
       "**/Cache"
       "/persist/var/lib/borg"
+      "/persist/home/${username}/Books"
+      "/persist/home/${username}/Gaming"
+      "/persist/home/${username}/Videos"
     ];
 
     repo = "\${BORG_REPO}";
@@ -75,7 +79,7 @@ in
     };
   };
 
-  systemd.services."borgbackup-job-${hostname}".serviceConfig.EnvironmentFile = [
+  systemd.services."borgbackup-job-system".serviceConfig.EnvironmentFile = [
     config.sops.templates."borg.env".path
   ];
 }

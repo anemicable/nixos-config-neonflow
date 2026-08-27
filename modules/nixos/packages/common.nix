@@ -46,6 +46,8 @@
     xwayland
     wayland-utils
 
+    gocryptfs
+
     openssl
     sops
     age

@@ -15,6 +15,5 @@
     EDITOR = "nvim";
     NIXOS_OZONE_WL = "1";
   };
-
   programs.home-manager.enable = true;
 }

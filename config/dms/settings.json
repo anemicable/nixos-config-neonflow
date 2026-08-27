@@ -1,15 +1,12 @@
 {
   "cornerRadius": 12,
-  "batteryPillPercentSign": false,
+  "clockFormat": "24h",
   "controlCenterShowMicPercent": true,
-  "showWorkspaceApps": true,
-  "workspaceAppIconSizeOffset": 1,
+  "showWorkspaceIndex": true,
+  "showWorkspaceName": true,
   "appIdSubstitutions": [],
   "clockDateFormat": "ddd d MMM yyyy",
   "greeterWallpaperPath": "/home/mistflow/nixos-config/assets/wallpapers/m-1.jpg",
-  "greeterUse24HourClock": true,
-  "greeterShowSeconds": false,
-  "greeterPadHours12Hour": false,
   "spotlightSectionViewModes": {
     "apps": "list"
   },
@@ -19,8 +16,6 @@
   "acLockTimeout": 3600,
   "fadeToLockEnabled": false,
   "fadeToDpmsEnabled": false,
-  "gtkThemingEnabled": false,
-  "qtThemingEnabled": false,
   "showDock": true,
   "dockSmartAutoHide": true,
   "dockSpacing": 9,
@@ -102,6 +97,32 @@
       "clickThrough": false
     }
   ],
+  "desktopClockCustomColor": {
+    "r": 1,
+    "g": 1,
+    "b": 1,
+    "a": 1,
+    "hsvHue": -1,
+    "hsvSaturation": 0,
+    "hsvValue": 1,
+    "hslHue": -1,
+    "hslSaturation": 0,
+    "hslLightness": 1,
+    "valid": true
+  },
+  "systemMonitorCustomColor": {
+    "r": 1,
+    "g": 1,
+    "b": 1,
+    "a": 1,
+    "hsvHue": -1,
+    "hsvSaturation": 0,
+    "hsvValue": 1,
+    "hslHue": -1,
+    "hslSaturation": 0,
+    "hslLightness": 1,
+    "valid": true
+  },
   "desktopWidgetInstances": [
     {
       "id": "dw_1780658071129_e5e1vinsy",
@@ -148,7 +169,5 @@
   "frameLauncherEmergeSide": "top",
   "frameLauncherArcExtender": true,
   "frameMode": "separate",
-  "configVersion": 16,
-  "closeNiriOverviewOnWindowFocus": true,
-  "clockFormat": "24h"
+  "configVersion": 16
 }

@@ -29,11 +29,15 @@
       # Preserve user files
       users.mistflow = {
          directories = [
+            "Data"
+            "Dev"
             "Documents"
             "Downloads"
             "Pictures"
             "Videos"
             "Music"
+            "Gaming"
+            "Books"
             
             ".config"
             ".local/share"
@@ -47,6 +51,7 @@
             ".vscode-oss-shared"
             ".ssh"
             ".mozilla"
+            ".vault-cipher"
             
             "nixos-config"
          ];

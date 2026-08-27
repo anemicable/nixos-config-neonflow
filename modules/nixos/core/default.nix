@@ -3,9 +3,11 @@
 {
   imports = [
     ../packages/default.nix
+    ../containerization/default.nix
     ../backups/default.nix
     ../downloads/default.nix
     ../security/default.nix
+    ../browsers/default.nix
     ../gui/default.nix
 
     ./audio.nix

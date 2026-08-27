@@ -52,6 +52,7 @@ in
       "/persist/home/${username}/Books"
       "/persist/home/${username}/Gaming"
       "/persist/home/${username}/Videos"
+      "/persist/home/${username}/Downloads"
     ];
 
     repo = "\${BORG_REPO}";

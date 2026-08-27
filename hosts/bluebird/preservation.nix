@@ -42,7 +42,7 @@
             ".config"
             ".local/share"
             ".local/share/icons"
-            ".local/share/DankMaterialShell"
+            ".local/state/DankMaterialShell"
             ".java"
             ".junie"
             ".vscode"

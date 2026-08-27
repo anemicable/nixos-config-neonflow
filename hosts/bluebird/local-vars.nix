@@ -16,6 +16,8 @@
     aiIntegrationLevel = "off";
 
     containerization = "off";
+
+    isLaptop = true;
     
   };
 }

@@ -21,4 +21,11 @@
     enableCalendarEvents = true;       # Calendar integration (khal)
     enableClipboardPaste = true;       # Pasting items from the clipboard (wtype)
   };
+
+  # Binding config dotfiles to .config for DMS
+  xdg.configFile."DankMaterialShell" = {
+    source = config.lib.file.mkOutOfStoreSymlink
+   "${config.home.homeDirectory}/nixos-config/config/dms";  
+   force = true;
+  };
 }

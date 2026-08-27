@@ -12,6 +12,7 @@
         "/var/lib/AccountsService"
         "/var/lib/bluetooth"
         "/var/lib/containers"
+        "/var/lib/borg"
         {
           directory = "/var/lib/nixos";
           inInitrd = true;

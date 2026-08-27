@@ -1,0 +1,3 @@
+[wallpaper]
+directory = "~/nixos-config/assets/wallpapers"
+per_monitor_directories = false

@@ -10,6 +10,8 @@
   "spotlightSectionViewModes": {
     "apps": "list"
   },
+  "dankLauncherV2ShowSourceBadges": false,
+  "iconThemeDark": "Adwaita",
   "launcherLogoMode": "os",
   "fontScale": 0.9,
   "acMonitorTimeout": 600,

@@ -3,7 +3,6 @@
     home.packages = with pkgs; [
     # Development
     neovim
-    vscode
     jetbrains.pycharm
 
     python312

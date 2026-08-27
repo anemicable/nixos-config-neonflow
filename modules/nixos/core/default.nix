@@ -9,6 +9,7 @@
     ../security/default.nix
     ../browsers/default.nix
     ../gui/default.nix
+    ../ai-system/default.nix
 
     ./audio.nix
     ./boot.nix

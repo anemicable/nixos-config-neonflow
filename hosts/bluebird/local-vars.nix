@@ -12,7 +12,7 @@
     professionalEmail = "";
     professionalGithubName = "";
     
-    guiBuild = "gnome";
+    guiBuild = "niri-dms";
     aiIntegrationLevel = "off";
 
     containerization = "off";

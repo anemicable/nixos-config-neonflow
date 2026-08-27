@@ -1,7 +1,22 @@
-{ ... }:
+
+{ config, osConfig, lib, inputs, ... }:
+
 {
-  imports = [
-    ./niri/default.nix
+  imports = [ 
+    #./icons.nix
+    ./gtk.nix
+    #./nautilus.nix
+  ]
+
+  ++ lib.optionals (osConfig.systemVars.guiBuild == "niri-noctalia") [
+    ./niri/default.nix 
+    ./noctalia/default.nix 
+    #./lock-screen.nix
+  ]
+
+  ++ lib.optionals (osConfig.systemVars.guiBuild == "niri-dms") [
+    ./niri/default.nix 
     ./dms/default.nix
   ];
+
 }

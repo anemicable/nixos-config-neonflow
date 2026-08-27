@@ -53,6 +53,16 @@
       example = "niri-dms";
     };
 
+    displayManager = lib.mkOption {
+      type = lib.types.enum [
+        "dms-greeter"
+        "gdm"
+      ];
+      default = "dms-greeter";
+      description = "Which display manager you want to use";
+      example = "dms-greeter";
+    };
+
     # Features
     aiIntegrationLevel = lib.mkOption {
       type = lib.types.enum [

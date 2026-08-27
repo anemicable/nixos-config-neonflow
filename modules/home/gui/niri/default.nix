@@ -1,7 +1,7 @@
 { config, pkgs, lib, osConfig, ... }: {
   imports = 
      [
-     # ./keybindings.nix
+      ./keybindings.nix
     ];
 
   programs.niri = {

@@ -3,9 +3,9 @@
   # ====================== Desktop entry ======================
   xdg.desktopEntries.helium-cryonic = {
     name = "Helium (Cryonic)";
-    comment = "Профиль внутри ~/.Vault";
+    comment = "Основной профиль";
     exec = "${config.home.homeDirectory}/.local/bin/helium-cryonic %U";
-    icon = "/persist/home/mistflow/nixos-config/assets/icons/helium-cryonic.png";
+    icon = "/persist/home/mistflow/nixos-config/assets/icons/helium-cryonic.jpg";
     terminal = false;
     type = "Application";
     categories = [ "Network" "WebBrowser" ];
@@ -13,7 +13,7 @@
 
   xdg.desktopEntries.helium-workstation = {
     name = "Helium (Workstation)";
-    comment = "Профиль внутри ~/.Vault";
+    comment = "Рабочий / обучительный профиль";
     exec = "${config.home.homeDirectory}/.local/bin/helium-workstation %U";
     icon = "security-high";
     terminal = false;
@@ -23,9 +23,9 @@
 
   xdg.desktopEntries.helium-shopping = {
     name = "Helium (Shopping)";
-    comment = "Профиль внутри ~/.Vault";
+    comment = "Профиль для онлайн-покупок";
     exec = "${config.home.homeDirectory}/.local/bin/helium-shopping %U";
-    icon = "security-high";
+    icon = "/persist/home/mistflow/nixos-config/assets/icons/helium-shopping.jpg";
     terminal = false;
     type = "Application";
     categories = [ "Network" "WebBrowser" ];

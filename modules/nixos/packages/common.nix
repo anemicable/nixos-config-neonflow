@@ -41,6 +41,8 @@
     nh                    # nix helper (очень удобно)
 
     adwaita-icon-theme
+    
+    vlc
 
     weston
     xwayland

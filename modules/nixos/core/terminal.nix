@@ -1,4 +1,7 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
+let
+  hostname = config.systemVars.hostname;
+in
 {
   programs.zsh.enable = true;
   console.colors = [
@@ -19,4 +22,8 @@
         #"#93a1a1"  # bright cyan
         #"#fdf6e3"  # bright white
   ];
+
+  environment.shellAliases = {
+    rebuild = "cd ~/nixos-config && sudo nixos-rebuild switch --flake .#${hostname}";
+  };
 }

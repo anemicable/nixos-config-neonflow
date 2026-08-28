@@ -1,4 +1,8 @@
-{ inputs, ... }:
+{ inputs, config, ... }:
+let
+  vaultPath = "${config.home.homeDirectory}/Data/.sync/.helium-cryonic";
+  mountPath = "${config.home.homeDirectory}/.config/helium-cryonic";
+in
 {
   imports = [ inputs.helium.nixosModules.default ];
 

@@ -5,6 +5,7 @@ let
   homeTree = [
     "Dev"
     "Data"
+    "Data/.sync"
     "Gaming"
     "Books"
     "Vault"

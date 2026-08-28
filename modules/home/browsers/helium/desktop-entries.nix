@@ -15,7 +15,7 @@
     name = "Helium (Workstation)";
     comment = "Рабочий / обучительный профиль";
     exec = "${config.home.homeDirectory}/.local/bin/helium-workstation %U";
-    icon = "security-high";
+    icon = "/persist/home/mistflow/nixos-config/assets/icons/helium-workstation.jpg";
     terminal = false;
     type = "Application";
     categories = [ "Network" "WebBrowser" ];

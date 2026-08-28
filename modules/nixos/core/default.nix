@@ -10,6 +10,7 @@
     ../browsers/default.nix
     ../gui/default.nix
     ../ai-system/default.nix
+    ../gaming/default.nix
 
     ./audio.nix
     ./boot.nix

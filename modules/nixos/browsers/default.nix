@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
     imports = [ 
-        ./helium/default.nix
+        ./helium.nix
         #./vivaldi/default.nix
      ];
 }

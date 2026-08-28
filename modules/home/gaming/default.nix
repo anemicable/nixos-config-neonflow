@@ -1,6 +1,8 @@
 { ... }:
 {
+
   imports = [
-  #  ./configuration.nix
+    ./lutris.nix
   ];
+
 }

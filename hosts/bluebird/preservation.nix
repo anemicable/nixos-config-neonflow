@@ -27,7 +27,7 @@
       ];
 
       # Preserve user files
-      users.mistflow = {
+      users.${config.systemVars.username} = {
          directories = [
             "Data"
             "Dev"

@@ -32,5 +32,7 @@
     xdg-user-dirs
 
     quickshell
+
+    vivaldi
   ];
 }

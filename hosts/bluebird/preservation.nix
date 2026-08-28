@@ -1,3 +1,4 @@
+{ config, ... }:
 {
   preservation = {
     enable = true;

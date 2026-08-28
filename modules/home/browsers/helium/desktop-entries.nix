@@ -30,4 +30,14 @@
     type = "Application";
     categories = [ "Network" "WebBrowser" ];
   };
+
+  xdg.desktopEntries.helium-swamp = {
+    name = "Helium (Swamp)";
+    comment = "Профиль для остального";
+    exec = "${config.home.homeDirectory}/.local/bin/helium-swamp %U";
+    icon = "/persist/home/mistflow/nixos-config/assets/icons/helium-swamp.jpg";
+    terminal = false;
+    type = "Application";
+    categories = [ "Network" "WebBrowser" ];
+  };
 }

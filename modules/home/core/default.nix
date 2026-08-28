@@ -6,6 +6,7 @@
     ../gui/default.nix
     ../code/default.nix
     ../browsers/default.nix
+    ../gaming/default.nix
 
     ./file-structure.nix
   ];

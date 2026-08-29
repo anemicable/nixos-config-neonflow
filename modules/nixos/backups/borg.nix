@@ -1,29 +1,20 @@
-
-{ config, ... }:
+{ config, lib, ... }:
 let
   hostname = config.systemVars.hostname;
   username = config.systemVars.username;
   secret = name: config.sops.secrets.${name}.path;
+
+  repoSecret =
+    if hostname == "bluebird" then "borg/bluebird/repo"
+    else if hostname == "moonbox" then "borg/moonbox/repo"
+    else throw "unknown hostname: ${hostname}";
 in
 {
-  # Secrets management
-  sops.secrets."borg/repo" = {
-    owner = "root";
-    mode = "0400";
-  };
-  sops.secrets."borg/passphrase" = {
-    owner = "root";
-    mode = "0400";
-  };
-  sops.secrets."borg/ssh-private-key" = {
-    owner = "root";
-    mode = "0400";
-  };
-
-  sops.secrets."borg/known-hosts" = {
-    owner = "root";
-    mode = "0404";
-  };
+  sops.secrets."borg/bluebird/repo" = { owner = "root"; mode = "0400"; };
+  sops.secrets."borg/moonbox/repo"  = { owner = "root"; mode = "0400"; };
+  sops.secrets."borg/passphrase" = { owner = "root"; mode = "0400"; };
+  sops.secrets."borg/ssh-private-key" = { owner = "root"; mode = "0400"; };
+  sops.secrets."borg/known-hosts" = { owner = "root"; mode = "0404"; };
 
   sops.templates."borg-known-hosts" = {
     content = ''
@@ -35,52 +26,54 @@ in
 
   sops.templates."borg.env" = {
     content = ''
-      BORG_REPO=${config.sops.placeholder."borg/repo"}
+      BORG_REPO=${config.sops.placeholder."${repoSecret}"}
     '';
     owner = "root";
     mode = "0400";
   };
 
+  services.borgbackup.jobs =
+    lib.mkIf (hostname == "bluebird" || hostname == "moonbox") {
+      "${hostname}-system" = {
+        paths = [ "/persist" ];
+        exclude = [
+          "**/.cache"
+          "**/Cache"
+          "/persist/var/lib/borg"
+          "/persist/home/${username}/Books"
+          "/persist/home/${username}/Gaming"
+          "/persist/home/${username}/Videos"
+          "/persist/home/${username}/Downloads"
+        ];
 
-  # Job
-  services.borgbackup.jobs."${hostname}-system" = {
-    paths = [ "/persist" ];
-    exclude = [
-      "**/.cache"
-      "**/Cache"
-      "/persist/var/lib/borg"
-      "/persist/home/${username}/Books"
-      "/persist/home/${username}/Gaming"
-      "/persist/home/${username}/Videos"
-      "/persist/home/${username}/Downloads"
-    ];
+        repo = "\${BORG_REPO}";
 
-    repo = "\${BORG_REPO}";
+        encryption = {
+          mode = "repokey-blake2";
+          passCommand = "cat ${secret "borg/passphrase"}";
+        };
 
-    encryption = {
-      mode = "repokey-blake2";
-      passCommand = "cat ${secret "borg/passphrase"}";
+        environment = {
+          BORG_RSH = "ssh -i ${secret "borg/ssh-private-key"} -o UserKnownHostsFile=${config.sops.templates."borg-known-hosts".path} -o StrictHostKeyChecking=yes";
+          BORG_CACHE_DIR = "/var/lib/borg/cache";
+          BORG_SECURITY_DIR = "/var/lib/borg/security";
+          BORG_CONFIG_DIR = "/var/lib/borg/config";
+        };
+
+        compression = "auto,zstd";
+        startAt = "daily";
+        persistentTimer = true;
+        doInit = true;
+
+        prune.keep = {
+          daily = 7;
+          weekly = 4;
+          monthly = 3;
+        };
+      };
     };
 
-    environment = {
-      BORG_RSH = "ssh -i ${secret "borg/ssh-private-key"} -o UserKnownHostsFile=${config.sops.templates."borg-known-hosts".path} -o StrictHostKeyChecking=yes";
-      BORG_CACHE_DIR = "/var/lib/borg/cache";
-      BORG_SECURITY_DIR = "/var/lib/borg/security";
-      BORG_CONFIG_DIR = "/var/lib/borg/config";
-    };
-    compression = "auto,zstd";
-    startAt = "daily";
-    persistentTimer = true;
-    doInit = true;
-
-    prune.keep = {
-      daily = 7;
-      weekly = 4;
-      monthly = 3;
-    };
-  };
-
-  systemd.services."borgbackup-job-system".serviceConfig.EnvironmentFile = [
+  systemd.services."borgbackup-job-${hostname}-system".serviceConfig.EnvironmentFile = [
     config.sops.templates."borg.env".path
   ];
 }

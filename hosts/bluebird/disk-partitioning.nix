@@ -1,3 +1,4 @@
+{ config, ... }:
 {
   disko.devices = {
     nodev."/" = {
@@ -11,7 +12,7 @@
 
     disk.main = {
       type = "disk";
-      device = "/dev/nvme0n1";   # лучше заменить на by-id
+      device = config.systemVars.diskDevice;   # лучше заменить на by-id
       content = {
         type = "gpt";
         partitions = {

@@ -55,15 +55,15 @@ in
 
         environment = {
           BORG_RSH = "ssh -i ${secret "borg/ssh-private-key"} -o UserKnownHostsFile=${config.sops.templates."borg-known-hosts".path} -o StrictHostKeyChecking=yes";
-          BORG_CACHE_DIR = "/var/lib/borg/cache";
-          BORG_SECURITY_DIR = "/var/lib/borg/security";
-          BORG_CONFIG_DIR = "/var/lib/borg/config";
+          BORG_CACHE_DIR = "/persist/var/lib/borg/cache";
+          BORG_SECURITY_DIR = "/persist/var/lib/borg/security";
+          BORG_CONFIG_DIR = "/persist/var/lib/borg/config";
         };
 
         compression = "auto,zstd";
         startAt = "daily";
         persistentTimer = true;
-        doInit = true;
+        doInit = false;
 
         prune.keep = {
           daily = 7;
@@ -76,4 +76,16 @@ in
   systemd.services."borgbackup-job-${hostname}-system".serviceConfig.EnvironmentFile = [
     config.sops.templates."borg.env".path
   ];
+
+  systemd.tmpfiles.rules = [
+    "d /persist/var/lib/borg 0700 root root -"
+    "d /persist/var/lib/borg/cache 0700 root root -"
+    "d /persist/var/lib/borg/security 0700 root root -"
+    "d /persist/var/lib/borg/config 0700 root root -"
+  ];
+
+  environment.shellAliases = {
+    borg-backup = "systemctl start borgbackup-job-${hostname}-system";
+    borg-backup-log = "journalctl -u borgbackup-job-${hostname}-system -f";
+  };
 }

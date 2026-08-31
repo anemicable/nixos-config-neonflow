@@ -20,7 +20,7 @@
     extraSpecialArgs = {
       inherit inputs;
     };
-    users.${config.systemVars.username} = import ./home.nix;
+    users.${config.systemVars.username} = import ../common/home.nix;
   };
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

@@ -10,6 +10,8 @@
     aiIntegrationLevel = "full";
 
     containerization = "podman";
+
+    isLaptop = false;
     
   };
 }

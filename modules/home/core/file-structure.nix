@@ -8,7 +8,8 @@ let
     "Data/.sync"
     "Gaming"
     "Books"
-    "Vault"
+    ".Vault"
+    ".db-storage"
   ];
 in {
   xdg.enable = true;

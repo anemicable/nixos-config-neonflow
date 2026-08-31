@@ -1,6 +1,6 @@
 { ... }:
 {
   imports = [
-    #./home.nix
+    ./preservation.nix
   ];
 }

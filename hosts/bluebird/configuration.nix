@@ -5,7 +5,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./disk-partitioning.nix
-      ./preservation.nix
+      #./preservation.nix
       ./local-vars.nix
 
       ../../modules/nixos/core/default.nix

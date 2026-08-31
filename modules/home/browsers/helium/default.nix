@@ -1,7 +1,7 @@
 { pkgs, config, ... }:
 let
-  vaultCipher = "${config.home.homeDirectory}/.vault-cipher";
-  vaultMount  = "${config.home.homeDirectory}/.Vault";
+  vaultCipher = "${config.home.homeDirectory}/.db-cipher";
+  vaultMount  = "${config.home.homeDirectory}/.db-storage";
   heliumDir   = "${vaultMount}/helium";
 
   zenity    = "${pkgs.zenity}/bin/zenity";

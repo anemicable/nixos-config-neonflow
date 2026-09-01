@@ -6,9 +6,9 @@ in
 {
 
   systemd.tmpfiles.rules = [
-    "d /persistent/var/lib/sillytavern/config    0755 1000 1000 -"
-    "d /persistent/var/lib/sillytavern/data      0755 1000 1000 -"
-    "d /persistent/var/lib/sillytavern/plugins   0755 1000 1000 -"
+    "d /persist/var/lib/sillytavern/config    0755 1000 1000 -"
+    "d /persist/var/lib/sillytavern/data      0755 1000 1000 -"
+    "d /persist/var/lib/sillytavern/plugins   0755 1000 1000 -"
   ];
 
   virtualisation.oci-containers.containers.sillytavern =
@@ -19,9 +19,9 @@ in
       extraOptions = [ "--network=host" ];
 
       volumes = [
-        "/persistent/var/lib/sillytavern/config:/home/node/app/config"
-        "/persistent/var/lib/sillytavern/data:/home/node/app/data"
-        "/persistent/var/lib/sillytavern/plugins:/home/node/app/plugins"
+        "/persist/var/lib/sillytavern/config:/home/node/app/config"
+        "/persist/var/lib/sillytavern/data:/home/node/app/data"
+        "/persist/var/lib/sillytavern/plugins:/home/node/app/plugins"
       ];
 
       environment = {

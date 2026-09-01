@@ -5,9 +5,9 @@ in
 { 
   # Создаём папки декларативно
   systemd.tmpfiles.rules = [
-    "d /persistent/var/lib/ollama 0700 ollama ollama -"
-    "d /persistent/var/lib/ollama/models 0700 ollama ollama -"
-    #"d /persistent/var/lib/open-webui 0700 open-webui open-webui -"
+    "d /persist/var/lib/ollama 0700 ollama ollama -"
+    "d /persist/var/lib/ollama/models 0700 ollama ollama -"
+    #"d /persist/var/lib/open-webui 0700 open-webui open-webui -"
   ];
 
   # === OLLAMA ===
@@ -19,7 +19,7 @@ in
     user = "ollama";
     group = "ollama";
 
-    home = "/persistent/var/lib/ollama";
+    home = "/persist/var/lib/ollama";
 
     # Auto-download models when the service starts
     loadModels = [

@@ -33,6 +33,8 @@
 
     quickshell
 
+    brave
+
     vivaldi
   ];
 }

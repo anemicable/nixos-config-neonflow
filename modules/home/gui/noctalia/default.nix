@@ -10,6 +10,9 @@
   # ───────────────────────────────────────────────────────────────────────
   # NOCTALIA CONFIGURATION (Impermanent-friendly)
   # ───────────────────────────────────────────────────────────────────────
-  xdg.configFile."noctalia".source = config.lib.file.mkOutOfStoreSymlink
-    "${config.home.homeDirectory}/nixos-config/config/noctalia";
+  xdg.configFile."DankMaterialShell" = {
+    source = config.lib.file.mkOutOfStoreSymlink
+   "${config.home.homeDirectory}/nixos-config/config/noctalia";  
+   force = true;
+  };
 }

@@ -8,6 +8,6 @@
     #./nautilus.nix
     ./dms/default.nix
     ./niri/default.nix
-    #./noctalia/default.nix
+    ./noctalia/default.nix
   ];
 }

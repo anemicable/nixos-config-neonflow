@@ -1,7 +1,7 @@
-{ pkgs, inputs, lib, config, ... }:
+{ pkgs, inputs, lib, config, osConfig, ... }:
 let
-  windowTilingManager = config.systemVars.windowTilingManager;
-  isDMS = windowTilingManager == "dms";
+  shellGui = osConfig.systemVars.shellGui;
+  isDMS = shellGui == "dms";
 in
 {
   imports = [
@@ -10,7 +10,7 @@ in
   ];
 
   programs.dank-material-shell = {
-    enable = true;
+    enable = isDMS;
     
     systemd = {
       enable = true;             # Systemd service for auto-start

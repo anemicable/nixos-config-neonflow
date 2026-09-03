@@ -64,6 +64,18 @@
       example = "niri";
     };
 
+    shellGui = lib.mkOption {
+      type = lib.types.enum [
+        "noctalia"
+        "dms"
+      ];
+      default = "dms";
+      description = "Which shell to use";
+      example = "dms";
+    };
+
+    
+
     displayManager = lib.mkOption {
       type = lib.types.enum [
         "dms-greeter"

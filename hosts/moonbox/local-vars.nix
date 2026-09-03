@@ -10,6 +10,7 @@
     # GUI 
     guiBuild = "niri-noctalia";
     windowTilingManager = "niri";
+    shellGui = "dms";
 
     aiIntegrationLevel = "full";
 

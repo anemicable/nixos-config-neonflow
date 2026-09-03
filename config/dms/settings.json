@@ -1,4 +1,7 @@
 {
+  "currentThemeName": "dynamic",
+  "currentThemeCategory": "dynamic",
+  "matugenScheme": "scheme-vibrant",
   "cornerRadius": 12,
   "clockFormat": "24h",
   "controlCenterShowMicPercent": true,
@@ -23,6 +26,8 @@
   "dockSmartAutoHide": true,
   "dockSpacing": 9,
   "osdPowerProfileEnabled": true,
+  "displayNameMode": "model",
+  "displayProfileAutoSelect": true,
   "barConfigs": [
     {
       "id": "default",

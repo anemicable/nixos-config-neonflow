@@ -1,4 +1,8 @@
 { pkgs, inputs, lib, config, ... }:
+let
+  windowTilingManager = config.systemVars.windowTilingManager;
+  isDMS = windowTilingManager == "dms";
+in
 {
   imports = [
     inputs.dms.homeModules.dank-material-shell

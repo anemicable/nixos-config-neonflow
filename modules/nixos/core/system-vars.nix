@@ -53,6 +53,17 @@
       example = "niri-dms";
     };
 
+    windowTilingManager = lib.mkOption {
+      type = lib.types.enum [
+        "hyprland"
+        "niri"
+        "mango"
+      ];
+      default = "niri";
+      description = "Which WTM to use";
+      example = "niri";
+    };
+
     displayManager = lib.mkOption {
       type = lib.types.enum [
         "dms-greeter"

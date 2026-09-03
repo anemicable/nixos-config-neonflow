@@ -2,11 +2,15 @@
 
 {
   systemVars = {
+    # Basic system variables
     username = "mistflow";
     hostname = "moonbox";
     diskDevice = "/dev/nvme0n1";
 
-    guiBuild = "niri-dms";
+    # GUI 
+    guiBuild = "niri-noctalia";
+    windowTilingManager = "niri";
+
     aiIntegrationLevel = "full";
 
     containerization = "podman";

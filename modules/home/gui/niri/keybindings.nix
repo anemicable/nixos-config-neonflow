@@ -1,7 +1,7 @@
 { config, pkgs, osConfig, lib, ... }:
 
 let
-  configPathCryonic = "${config.home.homeDirectory}/.config/vivaldi-cryonic";
+  configPathMoonflow = "${config.home.homeDirectory}/.config";
 
   isNoctalia = osConfig.systemVars.guiBuild == "niri-noctalia";
   isDMS      = osConfig.systemVars.guiBuild == "niri-dms";
@@ -18,7 +18,7 @@ in
       "Mod+E" = { action.spawn = ["nautilus"]; };
       "Mod+F" = { action.toggle-window-floating = {}; };
 
-      "Mod+Z" = { action.spawn = ["vivaldi-cryonic" "--user-data-dir=${configPathCryonic}" "%U"]; };
+      "Mod+Z" = { action.spawn = [ "vivaldi" "--user-data-dir=${configPathMoonflow}/vivaldi-moonflow" "%U" ]; };
       "Mod+V" = { action.spawn = ["codium" "--ozone-platform=wayland"]; };
       "Mod+N" = { action.spawn = ["codium" "--new-window" "~/nixos-config" "--ozone-platform=wayland"]; };
       

@@ -1,6 +1,10 @@
 { pkgs, lib, config, ... }:
+let
+  windowTilingManager = config.systemVars.windowTilingManager;
+  isNiri = windowTilingManager == "niri";
+in
 {
-  programs.niri.enable = true;
+  programs.niri.enable = isNiri;
 
   # Используем свежую версию Niri только для DMS
   programs.niri.package = pkgs.niri;

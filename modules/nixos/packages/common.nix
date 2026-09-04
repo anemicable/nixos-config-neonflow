@@ -34,6 +34,7 @@
     tcpdump
     dig
     whois
+    iw
 
     # === Nix-specific ===
     nix-tree

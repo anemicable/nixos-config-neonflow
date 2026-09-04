@@ -9,6 +9,8 @@
     # proxy.noProxy = "...";
   };
 
+  hardware.enableRedistributableFirmware = true;
+
   security.sudo.extraRules = [{
     users = [ config.systemVars.username ];
     commands = [{

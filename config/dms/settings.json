@@ -11,6 +11,7 @@
     "apps": "list"
   },
   "dankLauncherV2ShowSourceBadges": false,
+  "networkPreference": "wifi",
   "iconThemeDark": "Adwaita",
   "launcherLogoMode": "os",
   "fontScale": 0.9,

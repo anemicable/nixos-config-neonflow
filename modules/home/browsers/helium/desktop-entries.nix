@@ -1,10 +1,18 @@
 { pkgs, config, ... }:
+let
+  vaultMount  = "${config.home.homeDirectory}/.db-storage";
+  heliumDir   = "${config.home.homeDirectory}/.config/helium";
+in
 {
   # ====================== Desktop entry ======================
   xdg.desktopEntries.helium-cryonic = {
     name = "Helium (Cryonic)";
     comment = "Основной профиль";
-    exec = "${config.home.homeDirectory}/.local/bin/helium-cryonic %U";
+    exec = "helium \
+        --user-data-dir="{heliumDir}/Personal" \
+        --no-first-run \
+        --no-default-browser-check \
+         %U";
     icon = "/persist/home/mistflow/nixos-config/assets/icons/helium-cryonic.jpg";
     terminal = false;
     type = "Application";

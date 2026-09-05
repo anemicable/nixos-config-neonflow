@@ -53,7 +53,7 @@ in
   ];
 
   # Presevation
-  preservation.preserveAt."/persistent".directories = [
+  preservation.preserveAt."/persist".directories = [
       "/var/lib/qbittorrent"
       "/var/lib/qBittorrent"
       

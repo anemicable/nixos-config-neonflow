@@ -20,6 +20,12 @@
       "professional-email" = {};
       "personal-github-name" = {};
       "professional-github-name" = {};
+
+      "wireguard/provider/private-key" = {
+        owner = "root";
+        group = "root";
+        mode = "0400";
+      };
     };
   };
 }

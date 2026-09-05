@@ -64,13 +64,13 @@ in
     }
 
     # ==================== Только для DMS ====================
-    #(lib.mkIf isDMS {
-    #  "Mod+S" = { action.spawn = ["dms" "ipc" "call" "notifications" "toggle"]; };
-    #  "Mod+W" = { action.spawn = ["toggle-vpn-dms"]; };
-    #  "Mod+M" = { action.spawn = ["dms" "ipc" "call" "media" "toogle"]; };
-      # Добавляй сюда другие бинды, специфичные только для DMS
-      # "Mod+P" = { action.spawn = ["dms" "ipc" "call" "powerMenu" "toggle"]; };
-    #})
+    (lib.mkIf isDMS {
+      "Mod+S" = { action.spawn = ["dms" "ipc" "call" "notifications" "toggle"]; };
+      "Mod+W" = { action.spawn = ["toggle-vpn-dms"]; };
+      "Mod+M" = { action.spawn = ["dms" "ipc" "call" "media" "toogle"]; };
+     # Добавляй сюда другие бинды, специфичные только для DMS
+      "Mod+P" = { action.spawn = ["dms" "ipc" "call" "powerMenu" "toggle"]; };
+    })
 
     # ==================== Только для Noctalia (если нужно) ====================
     #(lib.mkIf isNoctalia {

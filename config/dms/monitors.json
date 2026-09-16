@@ -36,6 +36,24 @@
           "niri": {}
         }
       }
+    },
+    {
+      "id": "auto_d5cde9ab",
+      "name": "",
+      "outputs": {
+        "BOE Display 000000001": {
+          "mode": "1920x1080@100.000",
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "scale": 1,
+          "transform": "Normal",
+          "vrr": false,
+          "disabled": false,
+          "niri": {}
+        }
+      }
     }
   ]
 }

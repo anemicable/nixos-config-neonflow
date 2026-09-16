@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   programs.firefox.enable = true;
+  services.hardware.bolt.enable = true;
 
   environment.systemPackages = with pkgs; [
     git
@@ -54,5 +55,6 @@
     openssl
     sops
     age
+
    ];
 }

@@ -6,7 +6,9 @@
   # ─────────────────────────────────────────────────────────────
 
   # Timezone
-  time.timeZone = "Europe/Moscow";
+  time.timeZone = null;
+  services.automatic-timezoned.enable = true;
+  services.geoclue2.geoProviderUrl = "https://api.beacondb.net/v1/geolocate";
 
   # Default locale
   i18n.defaultLocale = "en_US.UTF-8";

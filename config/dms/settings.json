@@ -4,6 +4,7 @@
   "matugenScheme": "scheme-vibrant",
   "cornerRadius": 12,
   "clockFormat": "24h",
+  "wallpaperFillMode": "Pad",
   "controlCenterShowMicPercent": true,
   "showWorkspaceApps": true,
   "workspaceAppIconSizeOffset": 2,
@@ -14,6 +15,7 @@
     "apps": "list"
   },
   "dankLauncherV2ShowSourceBadges": false,
+  "useAutoLocation": true,
   "networkPreference": "wifi",
   "iconThemeDark": "Adwaita",
   "launcherLogoMode": "os",

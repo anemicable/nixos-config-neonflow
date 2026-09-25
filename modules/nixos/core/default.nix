@@ -14,6 +14,7 @@
 
     ./audio.nix
     ./boot.nix
+    ./gpu.nix
     ./networking.nix
     ./system-vars.nix
     ./locale.nix

@@ -12,6 +12,8 @@
     windowTilingManager = "niri";
     shellGui = "dms";
 
+    enabledDatabases = [ "postgresql" ];
+
     aiIntegrationLevel = "full";
 
     containerization = "podman";

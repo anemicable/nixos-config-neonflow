@@ -30,6 +30,15 @@
   "osdPowerProfileEnabled": true,
   "displayNameMode": "model",
   "displayProfileAutoSelect": true,
+  "connectedFrameBarStyleBackups": {
+    "default": {
+      "shadowIntensity": 0,
+      "squareCorners": false,
+      "attachToScreenEdge": false,
+      "gothCornersEnabled": false,
+      "borderEnabled": false
+    }
+  },
   "barConfigs": [
     {
       "id": "default",
@@ -181,6 +190,5 @@
   "frameCloseGaps": false,
   "frameLauncherEmergeSide": "top",
   "frameLauncherArcExtender": true,
-  "frameMode": "separate",
   "configVersion": 16
 }

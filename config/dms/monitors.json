@@ -54,6 +54,54 @@
           "niri": {}
         }
       }
+    },
+    {
+      "id": "auto_a6ae060a",
+      "name": "",
+      "outputs": {
+        "BOE Display 000000001": {
+          "mode": "1920x1080@100.000",
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "scale": 1,
+          "transform": "Normal",
+          "vrr": false,
+          "disabled": false,
+          "niri": {}
+        },
+        "BOE Display 000": {
+          "mode": "1920x1080@60.000",
+          "position": {
+            "x": 1920,
+            "y": 0
+          },
+          "scale": 1,
+          "transform": "Normal",
+          "vrr": false,
+          "disabled": false,
+          "niri": {}
+        }
+      }
+    },
+    {
+      "id": "auto_e707df2a",
+      "name": "",
+      "outputs": {
+        "BOE Display 000": {
+          "mode": "1920x1080@60.000",
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "scale": 1,
+          "transform": "Normal",
+          "vrr": false,
+          "disabled": false,
+          "niri": {}
+        }
+      }
     }
   ]
 }

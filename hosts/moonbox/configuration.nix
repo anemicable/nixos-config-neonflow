@@ -6,7 +6,8 @@
       ./hardware-configuration.nix
       ./disk-partitioning.nix
       ./local-vars.nix
-
+      ./overlays.nix
+      
       ../../modules/nixos/core/default.nix
     
       inputs.niri.nixosModules.niri

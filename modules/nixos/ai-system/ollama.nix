@@ -29,8 +29,8 @@ in
 
     # ==================== GENERAL / ROLEPLAY MODELS ====================
     ++ lib.optionals (aiLevel == "conversational-only" || aiLevel == "full") [
-      # "llama3.2:3b"            # Very fast, lightweight
-      # "gemma2:9b"              # Strong reasoning + creativity
+      "llama3.2:3b"            # Very fast, lightweight
+      "gemma2:9b"              # Strong reasoning + creativity
       "qwen2.5:14b"            # High quality medium model
       # "mistral-nemo:12b"       # Good writing style
 
@@ -52,7 +52,7 @@ in
     # ==================== LARGE / HIGH QUALITY ====================
     ++ lib.optionals (aiLevel == "full") [
     # "qwen2.5:32b"            # Very strong general model
-    # "llama3.3:70b"           # Meta's strong flagship (needs lots of VRAM)
+    "llama3.3:70b"           # Meta's strong flagship (needs lots of VRAM)
     ];
 
     # Optional: Automatically remove models not listed above on rebuild

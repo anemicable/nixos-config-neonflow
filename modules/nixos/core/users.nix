@@ -30,6 +30,7 @@ in
           "docker"
           "qbittorrent"
           "greeter"
+          "postgresql"
         ];
         hashedPasswordFile = config.sops.secrets."${config.systemVars.username}_password".path;
       };

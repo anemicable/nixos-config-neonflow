@@ -5,6 +5,7 @@
     ../packages/default.nix
     ../containerization/default.nix
     ../backups/default.nix
+    ../databases/default.nix
     ../downloads/default.nix
     ../security/default.nix
     ../browsers/default.nix

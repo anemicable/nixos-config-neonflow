@@ -36,6 +36,9 @@
       url = "github:oxcl/nix-flake-helium-browser";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # ComfyUI - AI generation of images
+    comfyui-nix.url = "github:utensils/comfyui-nix";
   };
 
   outputs = { self, nixpkgs, ... }@inputs:
